@@ -1,0 +1,5 @@
+(executable
+ (name octant)
+ (libraries term2 stackcl petrinet parsers)
+ 
+ (preprocess (pps lwt_ppx)))

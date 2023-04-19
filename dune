@@ -1,0 +1,6 @@
+(dirs :standard \ src-*)
+
+(env
+  
+ (dev
+  ))

@@ -1,0 +1,5 @@
+(library
+ (name logic)
+ (public_name octant.logic)
+ 
+ (libraries petrinet))

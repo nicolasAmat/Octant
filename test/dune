@@ -1,0 +1,6 @@
+(executables
+ (names testparse testparseformula testarrays testtfg testprojection)
+ (modules testparse testparseformula testarrays testtfg testprojection)
+ (libraries petrinet logic parsers libtfg)
+
+ (preprocess (pps lwt_ppx)))

@@ -1,0 +1,6 @@
+(library
+ (name parsers)
+ (public_name octant.parsers)
+ (libraries petrinet logic libtfg angstrom angstrom-lwt-unix lwt_ppx lwtutils bigstring)
+
+ (preprocess (pps lwt_ppx)))

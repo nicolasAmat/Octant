@@ -1,0 +1,7 @@
+(library
+ (name petrinet)
+ (public_name octant.petrinet)
+
+(foreign_stubs (language c) (names bitvec_pick))
+ 
+ (libraries common))
