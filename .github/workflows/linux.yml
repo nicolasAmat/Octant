@@ -14,11 +14,11 @@ jobs:
     - name: caml system packages install
       run: sudo apt-get install unzip opam ocaml-dune libdune-ocaml-dev ocaml-doc
     - name: Caml dependencies
-      run: opam init ; opam -y install lwt_ppx text lambda-term bigstring angstrom-lwt-unix pcre fileutils ANSITerminal
+      run: opam init ; opam switch create 4.14.1; eval $(opam env --switch=4.14.1) ; opam -y install lwt_ppx text lambda-term bigstring angstrom-lwt-unix pcre fileutils ANSITerminal
     - name: Build Octant
-      run: eval $(opam env) ; make
+      run: eval $(opam env --switch=4.14.1) ; make
     - name: copy
-      run: mkdir -p website/ ; cp _build/default/src/cli/*.exe website/
+      run: mkdir -p website/ ; cp _build/default/src/cli/octant.exe website/
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4.4.1
       with:
