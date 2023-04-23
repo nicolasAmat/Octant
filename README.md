@@ -7,8 +7,6 @@ This project was initially developed inside [TiPX](https://github.com/lebotlan/t
 
 ## Installation
 
-WIP
-
 You should be able to download the latest build from the "linux" branch on this repository.
 
 ## Running the tool
