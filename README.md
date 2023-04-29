@@ -7,11 +7,57 @@ This project was initially developed inside [TiPX](https://github.com/lebotlan/t
 
 ## Installation
 
-You should be able to download the latest build from the "linux" branch on this repository.
+You should be able to download the latest build from the "linux" branch on this repository. You can also compile the project from source using `make`.
 
 ## Running the tool
 
-WIP
+```
+./octant.exe command1 command2 ... commandn
+```
+
+It operates on a stack.  
+The commands take their arguments from the stack and/or from the command-line.
+
++ p means 'pop' (stack argument)
++ r means 'reads a command-line argument'  
++ 1 means pushes one value
++ * means pushes multiple values  
+
+Additionally, a global environment consists in bindings of the form  
++ name => formula  
++ name => bundle (that is: a Petri net, an initial marking, and possibly a tfg).  
+
+### Environment
+
+load        : r -> 0    - (implicit) -  Load the given Petri net, put it as a bundle in the environment with the name 'net'. E.g.: load "file.net".  
+bind        : rp -> 0   -  Binds the element on the stack to the given name. E.g.: bind special-net.  
+set         : rp -> 0   -  Synonym to bind.  
+get         : r -> 1    - (implicit) -  Gets the element associated to the given identifier in the environment. Pushes it. E.g.: get special-net.  
+
+
+### Formulas
+
+form        : r -> 1    -  Parse and push the given formula(s) on the stack (as a list). The reference bundle is the last found in the environment.  
+load-forms  : r -> 1    -  Read formulas from the given file and push them on the stack (as a list). The reference bundle is the last found in the environment.  
+project     : p -> 1    -  Projects a list of formulas (popped from the stack). The reference bundle must have a tfg. Pushes the resulting list of formulas.  
+tproject    : rp -> 1   -  Projects with a time limit.
+
+
+### Display
+
+quiet       :  -> 0     -  Quiet mode (prints only necessary information, e.g. verdicts).  
+smt-format  :  -> 0     -  Use smt-lib format when printing formulas.  
+print       : p -> 0    -  Pops and prints the topmost stack element.  
+fprint      : p -> 0    -  Full print: print the topmost stack element, with details.  
+nl          :  -> 0     -  Prints a blank line (separator).  
+
+
+### Others
+
+time        :  -> 0     -  Prints the delay since the previous time command. The first time command does not print anything.  
+dup         : p -> 2    -  Duplicate the argument on top of the stack.  
+pop         : p -> 0    -  Discards the topmost stack element.  
+help        :  -> 0     -  Display this help.  
 
 ## Dependencies
 

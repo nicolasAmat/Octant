@@ -189,12 +189,12 @@ let machine =
     title "Environment" ;
 
     def "load" implicit get_info !=> cl_filename nop !=%+ load
-      "Load the given Petri net, put it as a bundle in the environment with the name 'net'. E.g.: load \"file.net\"" ;
+      "Load the given Petri net, put it as a bundle in the environment with the name 'net'. E.g.: load \"file.net\"." ;
 
-    def "bind" get_info !=> cl_string !-> ids nop !==+ bind "Binds the element on the stack to the given name. E.g.: bind special-net" ;
+    def "bind" get_info !=> cl_string !-> ids nop !==+ bind "Binds the element on the stack to the given name. E.g.: bind special-net." ;
     def "set"  get_info !=> cl_string !-> ids nop !==+ bind "Synonym to bind." ;
 
-    def "get" implicit get_info !==> cl_env_name !-> id !== get "Gets the element associated to the given identifier in the environment. Pushes it. E.g.: get special-net" ;
+    def "get" implicit get_info !==> cl_env_name !-> id !== get "Gets the element associated to the given identifier in the environment. Pushes it. E.g.: get special-net." ;
     
     title "Formulas" ;
 
