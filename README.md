@@ -1,5 +1,12 @@
 # Octant 
 
+<br />
+<p align="center">
+  <a href="https://github.com/nicolasAmat/Octant">
+    <img src="logo.png" alt="Logo" width="424" height="374">
+  </a>
+</p>
+
 ## About 
 Octant is a quantifier eliminator for using Petri net reductions for model checking reachability properties. (It is also the first known polyhedral map projection [[Wikipedia]](https://en.wikipedia.org/wiki/Octant_projection).)
 
