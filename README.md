@@ -87,6 +87,10 @@ Additionally, a global environment consists in bindings of the form
 `pop         : p -> 0`    -  Discards the topmost stack element.  
 `help        :  -> 0`     -  Display this help.  
 
+## References
+
+- Amat, N, Le Botlan, D, Dal Zilio, S. Project and Conquer: Fast Quantifier Elimination for Checking Petri Nets Reachability. *International Conference on Verification, Model Checking, and Abstract Interpretation (VMCAI), To appear.* 2024.
+
 ## Dependencies
 
 The code repository includes OCaml libraries developed by Didier Le Botlan (outside this project) located inside folder `lib/`.
